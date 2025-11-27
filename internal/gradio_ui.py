@@ -40,7 +40,7 @@ def gradio_search(query, k=3, translate_checkbox=True):
     return format_results(df)
 
 
-def create_ui():
+def create_ui(books, db_books):
     """Return a Gradio Blocks internal without launching it."""
     with gr.Blocks() as app:
         gr.Markdown("## Bilingual Book Search (Yoruba and English) on English Books")
@@ -64,7 +64,7 @@ def create_ui():
 
         btn.click(
             gradio_search,
-            inputs=[txt, k, translate_cb],
+            inputs=[txt, books, db_books, k, translate_cb],
             outputs=out
         )
 

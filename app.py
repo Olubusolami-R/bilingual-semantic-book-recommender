@@ -6,7 +6,7 @@ load_dotenv()
 books = load_books()
 db_books = build_vector_db(books)
 
-app = create_ui()
+app = create_ui(books, db_books)
 
 if __name__ == "__main__":
     app.launch()
