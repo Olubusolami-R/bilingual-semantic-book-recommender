@@ -1,10 +1,7 @@
 import pandas as pd
-from embeddings import load_books, build_vector_db
 from translate import translate_yoruba_to_english
 
-books = load_books()
-db_books = build_vector_db(books)
-def retrieve_relevant_books(query, k=3, translate=False):
+def retrieve_relevant_books(query, books, db_books,  k=3, translate=False):
     """
     Pipeline to:
       - detect language (langdetect)
