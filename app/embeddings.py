@@ -7,7 +7,7 @@ import pandas as pd
 def load_books(csv_path="books_cleaned.csv"):
     return pd.read_csv(csv_path)
 
-def get_vector_db(books):
+def build_vector_db(books):
     raw_documents = [
         Document(page_content=row)
         for row in books["tagged_description"].astype(str)

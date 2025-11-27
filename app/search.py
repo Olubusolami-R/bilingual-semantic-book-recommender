@@ -1,11 +1,13 @@
 import pandas as pd
-from app.embeddings import db_books, books
+from embeddings import load_books, build_vector_db
+
+books = load_books()
+db_books = build_vector_db(books)
 
 def retrieve_relevant_books(query, k=3):
     """
     Returns a dataframe of the top-k matching rows.
     """
-
     results = db_books.similarity_search(query, k=k)
 
     rows = []
