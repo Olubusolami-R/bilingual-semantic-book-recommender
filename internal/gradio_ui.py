@@ -41,7 +41,7 @@ def gradio_search(query, k=3, translate_checkbox=True):
 
 
 def create_ui():
-    """Return a Gradio Blocks app without launching it."""
+    """Return a Gradio Blocks internal without launching it."""
     with gr.Blocks() as app:
         gr.Markdown("## Bilingual Book Search (Yoruba and English) on English Books")
 
