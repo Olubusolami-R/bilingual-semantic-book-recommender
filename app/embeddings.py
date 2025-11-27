@@ -1,30 +1,30 @@
-from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.schema import Document
 from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
 import pandas as pd
-from dotenv import load_dotenv
 
-load_dotenv()
+def load_books(csv_path="books_cleaned.csv"):
+    return pd.read_csv(csv_path)
 
-books=pd.read_csv('books_cleaned.csv')
-raw_documents = [
-    Document(page_content=row)
-    for row in books["tagged_description"].astype(str)
-]
+def get_vector_db(books):
+    raw_documents = [
+        Document(page_content=row)
+        for row in books["tagged_description"].astype(str)
+    ]
 
-text_splitter = CharacterTextSplitter(
-    chunk_size=5000,
-    chunk_overlap=0,
-    separator="\n"
-)
+    text_splitter = CharacterTextSplitter(
+        chunk_size=5000,
+        chunk_overlap=0,
+        separator="\n"
+    )
 
-documents = text_splitter.split_documents(raw_documents)
+    documents = text_splitter.split_documents(raw_documents)
 
-embeddings = OpenAIEmbeddings()
+    embeddings = OpenAIEmbeddings()
 
-db_books=Chroma.from_documents(
-    documents,
-    embedding=embeddings
-)
+    db_books=Chroma.from_documents(
+        documents,
+        embedding=embeddings
+    )
+    return db_books
