@@ -32,16 +32,25 @@ def format_results(df):
         """
     return html
 
-
-def gradio_search(query, k=3, translate_checkbox=True):
-    df = retrieve_relevant_books(query, k=int(k), translate=bool(translate_checkbox))
-    if df.empty:
-        return "No matches found."
-    return format_results(df)
+def make_gradio_search(books, db_books):
+    def gradio_search(query, k=3, translate_checkbox=True):
+        df = retrieve_relevant_books(
+            query,
+            books=books,
+            db_books=db_books,
+            k=int(k),
+            translate=bool(translate_checkbox)
+        )
+        if df.empty:
+            return "No matches found."
+        return format_results(df)
+    return gradio_search
 
 
 def create_ui(books, db_books):
     """Return a Gradio Blocks internal without launching it."""
+
+    gradio_search = make_gradio_search(books, db_books)
     with gr.Blocks() as app:
         gr.Markdown("## Bilingual Book Search (Yoruba and English) on English Books")
 
@@ -64,7 +73,7 @@ def create_ui(books, db_books):
 
         btn.click(
             gradio_search,
-            inputs=[txt, books, db_books, k, translate_cb],
+            inputs=[txt, k, translate_cb],
             outputs=out
         )
 
