@@ -1,5 +1,5 @@
 import pandas as pd
-from translate import translate_yoruba_to_english
+from internal.translate import translate_yoruba_to_english
 
 def retrieve_relevant_books(query, books, db_books,  k=3, translate=False):
     """

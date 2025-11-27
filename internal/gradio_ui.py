@@ -1,5 +1,5 @@
 import gradio as gr
-from search import retrieve_relevant_books
+from internal.search import retrieve_relevant_books
 
 def format_results(df):
     if df.empty:

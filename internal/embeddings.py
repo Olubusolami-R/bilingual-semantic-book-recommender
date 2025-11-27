@@ -4,7 +4,7 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
 import pandas as pd
 
-def load_books(csv_path="books_cleaned.csv"):
+def load_books(csv_path="data/books_cleaned.csv"):
     return pd.read_csv(csv_path)
 
 def build_vector_db(books):
