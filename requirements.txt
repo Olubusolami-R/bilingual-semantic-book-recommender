@@ -1,0 +1,25 @@
+# Core ML/NLP
+transformers==4.57.3
+torch==2.9.1
+sentencepiece==0.2.1
+
+# LangChain & Embeddings
+langchain==0.3.27
+langchain-chroma==0.2.6
+langchain-openai==0.3.34
+langchain-text-splitters==0.3.11
+chromadb==1.1.1
+openai==2.1.0
+
+# Data processing
+pandas==2.3.3
+
+# Translation
+langdetect==1.0.9
+
+# UI
+gradio==5.49.0
+
+# Environment
+python-dotenv==1.1.1
+sacremoses

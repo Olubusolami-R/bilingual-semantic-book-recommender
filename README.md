@@ -4,7 +4,7 @@ emoji: 📚
 colorFrom: blue
 colorTo: purple
 sdk: gradio
-sdk_version: 4.0.0
+sdk_version: 6.0.1
 app_file: app.py
 pinned: false
 ---
@@ -16,7 +16,7 @@ Built using Python, LangChain, Chroma, and Gradio, this project demonstrates a c
 
 ## Demo
 *Search results display the book title, ISBN, description, and cover image.*
-
+Test it here: https://huggingface.co/spaces/busbusss/book-rec-ui 
 ![Demo Screenshot](demo.png)  
 
 ## Features
