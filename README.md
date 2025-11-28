@@ -56,7 +56,7 @@ book-recommender/
 │   └── books_cleaned.csv      # cleaned book dataset
 │
 ├── notebooks/
-│   └── 01_data_exploration.ipynb  # dataset exploration & cleaning
+│   └── data_exploration.ipynb  # dataset exploration & cleaning
 │
 ├── internal/                  # core modules
 │   ├── embeddings.py          # build/load vector embeddings
@@ -65,3 +65,25 @@ book-recommender/
 │   └── gradio_ui.py           # defines the Gradio interface
 ```
 
+## Usage
+
+After following the steps above (including ensuring the virtual environment is activated), run:
+```bash
+python3 app.py
+```
+
+Then:
+1. Open the Gradio UI in your browser through the url shown on your terminal. 
+2. Enter a query in Yoruba or English. 
+3. Adjust k (number of results) and optionally translate Yoruba queries. 
+4. See your top matching books with title, ISBN, description, and cover image.
+
+## Why This Project?
+
+Many multiligual/bilingual speakers may want to discover books in English without needing to phrase queries in perfect English.
+This project allows cross-lingual semantic search and demonstrates a simple semantic search pipeline (Yoruba and English) that can be extended to other languages or domains.
+
+## Future Improvements
+1. Add more languages: Going from bilingual to multilingual. 
+2. Add a language detection feature that automatically translates non-english text without needing to check a box. 
+3. Enhance UI with better styling and pagination.
