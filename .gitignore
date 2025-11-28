@@ -1,5 +1,10 @@
 *.csv
 *.txt
 .env
+
+# PyCharm
 .idea/
-*/__pycache__/
+
+# Python cache
+__pycache__/
+*.py[cod]
