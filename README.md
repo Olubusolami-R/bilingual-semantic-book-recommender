@@ -4,9 +4,10 @@ A simple web app to search English-language books using queries in Yoruba (a low
 Built using Python, LangChain, Chroma, and Gradio, this project demonstrates a cross-lingual semantic search workflow.
 
 ## Demo
+Note: Space may take ~2-3 minutes to wake on first visit.
 *Search results display the book title, ISBN, description, and cover image.*
 Test it here: https://huggingface.co/spaces/busbusss/book-rec-ui 
-![Demo Screenshot](demo.png)  
+![Demo Screenshot](demo.png)
 
 ## Features
 
